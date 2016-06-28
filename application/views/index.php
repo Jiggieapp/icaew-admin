@@ -11,8 +11,10 @@
   <title>Jiggie Admin </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
   <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/iriy-admin.min.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
