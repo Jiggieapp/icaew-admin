@@ -149,7 +149,7 @@ if no error occured server send Response header status code to 200
 | Key           | Description   | Example Value |
 | ------------- | ------------- | ------------- |
 | country_id    | filter by country_id | 2 |
-| title     	| search by title name | 'metallica' |
+| title     	| search by title name | metallica |
 
 #### Response Body
 ```json
