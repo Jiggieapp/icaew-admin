@@ -316,3 +316,9 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once BASEPATH.'core/CodeIgniter.php';
+
+function _pr($var)
+{
+    echo "<pre>";print_r($var);echo "</pre>";
+    return;
+}

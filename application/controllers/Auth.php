@@ -48,11 +48,4 @@ class Auth extends CI_Controller {
         $this->session->unset_userdata('is_login');
         redirect('/auth/login');   
     }
-
-    function _pr($var)
-    {
-        echo "<pre>";
-        print_r($var);
-        echo "</pre>";
-    }
 }

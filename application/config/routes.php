@@ -55,6 +55,24 @@ $route['auth/login'] = 'auth/login';
 $route['auth/post_login'] = 'auth/post_login';
 $route['auth/logout'] = 'auth/logout';
 
+$route['api/about'] = 'api/about';
+
+$route['api/contact'] = 'api/contact';
+$route['api/contact/(:num)'] = 'api/contact/$1';
+
+$route['api/country'] = 'api/country';
+
+$route['api/event'] = 'api/event';
+$route['api/event/(:num)'] = 'api/event/$1';
+
+$route['api/program'] = 'api/program';
+$route['api/program/(:num)'] = 'api/program/$1';
+
+$route['api/university'] = 'api/university';
+$route['api/university/(:num)'] = 'api/university/$1';
+
+$route['404_override'] = 'api/c404';
+
 $default_controller = "site";
 
 $controller_exceptions = array('admin','forums');
@@ -64,5 +82,5 @@ $route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_
 
 
 
-$route['404_override'] = '';
+
 $route['translate_uri_dashes'] = FALSE;

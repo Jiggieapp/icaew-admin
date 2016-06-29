@@ -134,11 +134,11 @@ class Site extends CI_Controller {
     {
         $crud = new grocery_CRUD();
         $crud->set_table('program');
-        $crud->columns('title', 'description', 'image', 'youtube', 'updated_at');
+        $crud->columns('title', 'initial', 'description', 'image', 'youtube', 'is_banner', 'updated_at');
         
-        $crud->fields('title', 'description', 'image', 'youtube', 'created_at', 'updated_at');
+        $crud->fields('title', 'initial', 'description', 'image', 'youtube', 'is_banner', 'created_at', 'updated_at');
         
-        $crud->required_fields('title');
+        $crud->required_fields('title', 'initial', 'description');
 
         $crud->set_field_upload('image','assets/uploads/files');
         
@@ -152,12 +152,12 @@ class Site extends CI_Controller {
     {
         $crud = new grocery_CRUD();
         $crud->set_table('university');
-        $crud->columns('country_id','name','image', 'updated_at');
+        $crud->columns('country_id','name','image', 'email', 'phone', 'updated_at');
         $crud->display_as('country_id','Country');
 
         $crud->set_relation('country_id','country','name');
 
-        $crud->fields('country_id','name','image', 'created_at', 'updated_at');
+        $crud->fields('country_id','name','image', 'email', 'phone', 'address', 'created_at', 'updated_at');
         $crud->set_field_upload('image','assets/uploads/files');
         
         $crud->required_fields('country_id','name');
