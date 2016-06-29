@@ -17,11 +17,13 @@ if no error occured server send Response header status code to 200
 {
   "code": 200,
   "message": "OK",
-  "data": {
-    "id": 1,
-    "title": "Tentang Kita",
-    "...": "..."
-  }
+  "data": [
+  	{
+    	"id": 1,
+    	"title": "Tentang Kita",
+    	"...": "..."
+  	}
+  ]
 }
 ```
 - non collection
