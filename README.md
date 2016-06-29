@@ -27,9 +27,9 @@ if no error occured server send Response header status code to 200
 - non collection
 ```json
 {
-	code: 200,
-	message: "OK",
-	data: {
+	"code": 200,
+	"message": "OK",
+	"data": {
 			"id": 1,
 			"country_id": "1",
 			"title": "Pensi",
