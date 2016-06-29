@@ -39,10 +39,13 @@ if no error occured server send Response header status code to 200
 ```
 
 ### Code (in response body)
-```
-200: 'success'
-404: 'Endpoint/Record not found but status code in response header still 200'
-400: 'error from server but status code in  response header still 200' 
+
+| Code    | Message | Description |
+| ------- | ------- | ------- |
+| 200 | OK | response success |
+| 404 | Endpoint/Record not found | Endpoint/Record not found but status code in response header still 200 |
+| 400 | {error message}	| miscellaneous error but status code in response header still 200 |
+
 
 ### GET /about
 
