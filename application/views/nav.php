@@ -10,35 +10,35 @@
     <ul class="nav nav-pills nav-stacked">
         <li class="nav-dropdown">
             <a href="/about" title="About">
-                <i class="fa fa-lg fa-fw fa-home"></i> About
+                About
             </a>            
         </li>
         <li class="nav-dropdown">
             <a href="/contact" title="Contact">
-                <i class="fa fa-lg fa-fw fa-home"></i>Contact
+                Contact
             </a>            
         </li>
         <li class="nav-dropdown">
             <a href="/country" title="Country">
-                <i class="fa fa-lg fa-fw fa-home"></i>Country
+                Country
             </a>            
         </li>
 
         <li class="nav-dropdown">
             <a href="/event" title="Event">
-                <i class="fa fa-lg fa-fw fa-home"></i>Event
+                Event
             </a>            
         </li>
 
         <li class="nav-dropdown">
             <a href="/program" title="Program">
-                <i class="fa fa-lg fa-fw fa-home"></i>Program
+                Program
             </a>            
         </li>
 
         <li class="nav-dropdown">
             <a href="/university" title="University">
-                <i class="fa fa-lg fa-fw fa-home"></i>University
+                University
             </a>            
         </li>
         

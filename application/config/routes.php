@@ -51,12 +51,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$route['default_controller'] = 'site';
 
+$route['auth/login'] = 'auth/login';
+$route['auth/post_login'] = 'auth/post_login';
+$route['auth/logout'] = 'auth/logout';
+
 $default_controller = "site";
 
 $controller_exceptions = array('admin','forums');
 
 $route['default_controller'] = $default_controller;
 $route["^((?!\b".implode('\b|\b', $controller_exceptions)."\b).*)$"] = $default_controller.'/$1';
+
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

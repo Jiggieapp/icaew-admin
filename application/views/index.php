@@ -8,16 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="expires" content="Sat, 26 Jul 1997 05:00:00 GMT">
 
-  <title>Jiggie Admin </title>
+  <title>ICAEW Admin </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
+
   <link rel="stylesheet" href="/assets/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/iriy-admin.min.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
+  
 
   <link rel="stylesheet" href="/assets/lib/font-awesome/css/font-awesome.min.css">
 
@@ -25,6 +25,8 @@
   foreach($css_files as $file): ?>
     <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
   <?php endforeach; ?>
+
+  <link rel="stylesheet" href="/assets/css/custom.css">
  
   
   <style type="text/css">
@@ -52,7 +54,7 @@
                     
                     </span>
                     <span class="sc-hidden">
-                        <span class="semi-bold">Jiggie</span>
+                        <span class="semi-bold">ICAEW</span>
                         ADMIN
                     </span>
                 </a>
@@ -62,7 +64,7 @@
                 <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle navbar-user" href="javascript:;">
                      <i class="fa fa-lg fa-fw fa-user"></i>
-                     <span class="hidden-xs cookie-user-name"></span>
+                     <span class="hidden-xs cookie-user-name"><?php echo $this->session->username ?></span>
                      <b class="caret"></b>
                     </a>
 
@@ -84,11 +86,20 @@
 
         <div class="page-content">
             <div class="page-subheading page-subheading-md page-subheading-xxs">                        
-                <!--<ol class="breadcrumb" >
+                <ol class="breadcrumb">
                     <li><a href="/"> Home </a></li>
-                    <li><a href=""></a></li>
-                    <li></li> 
-                </ol>-->
+                    <?php $segs = $this->uri->segment_array(); ?>
+                    <?php foreach ($segs as $k => $segment): ?>
+                      <?php 
+                        $url = str_replace('/'.$segs[count($segs)], '', uri_string());
+                        $href = '';
+                        if ($k == 1) {
+                          $href = "href=/$url";
+                        }
+                      ?>
+                      <li><a <?php echo $href ?> > <?php echo ucwords($segment) ?></a></li>
+                    <?php endforeach ?>
+                </ol>
             </div>  
 
             <div class="container-fluid-md">   

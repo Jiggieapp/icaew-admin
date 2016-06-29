@@ -6,12 +6,15 @@ class Site extends CI_Controller {
     function __construct()
     {
         parent::__construct();
-
-     
         /* Standard Libraries */
         $this->load->database();
         $this->load->helper('url');
+        $this->load->library('session');
 
+        if (!isset($this->session->is_login)) {
+            redirect('/auth/login');
+        }
+        
         /* ------------------ */    
      
         $this->load->library('grocery_CRUD');    
