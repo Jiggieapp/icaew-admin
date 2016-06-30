@@ -23,7 +23,7 @@ class Api extends CI_Controller {
             $value->country_id = (int) $value->country_id;
         }
         if (isset($value->image)) {
-            $value->image = BASE_URL . '/uploads/files/' . $value->image; 
+            $value->image = BASE_URL . '/assets/uploads/files/' . $value->image; 
         }
         if (isset($value->is_banner)) {
             $value->is_banner = (bool) $value->is_banner;

@@ -31,14 +31,26 @@ class Site extends CI_Controller {
     }
 
     function _updated_at($post_array, $primary_key) {
+        $post_array['is_banner'] = isset($post_array['is_banner']) ? 1 : 0;
+
         $post_array['updated_at'] = date('Y-m-d H:i:s');
         return $post_array;
     }
 
     function _created_at($post_array) {
+        if (isset($post_array['is_banner'])) {
+            $post_array['is_banner'] = 1;
+        }
+        
         $post_array['created_at'] = date('Y-m-d H:i:s');
         $post_array['updated_at'] = date('Y-m-d H:i:s');
         return $post_array;
+    }
+
+    function _field_program_is_banner($value = '', $primary_key = null)
+    {
+        $check = $value == 1 ? 'checked' : '';
+        return '<input type="checkbox"  value="'.$value.'" name="is_banner" '.$check.' style="width:462px">';
     }
 
     function logDate($crud) {
@@ -73,12 +85,13 @@ class Site extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->set_table('contact');
         $crud->set_subject('Contact');
-        $crud->columns('country_id','telp','email','website', 'facebook', 'updated_at');
+        $crud->columns('country_id','telp','email','website','facebook','image','updated_at');
         $crud->display_as('country_id','Country');
 
         $crud->set_relation('country_id','country','name');
 
-        $crud->fields('country_id','telp','email','website', 'facebook', 'created_at', 'updated_at');
+        $crud->fields('country_id','telp','email','website', 'facebook', 'image', 'created_at', 'updated_at');
+        $crud->set_field_upload('image','assets/uploads/files');
 
         $crud->required_fields('country_id','telp','email');
 
@@ -141,6 +154,8 @@ class Site extends CI_Controller {
         $crud->required_fields('title', 'initial', 'description');
 
         $crud->set_field_upload('image','assets/uploads/files');
+        
+        $crud->callback_field('is_banner',array($this,'_field_program_is_banner'));
         
         $this->logDate($crud);
         $output = $crud->render();
