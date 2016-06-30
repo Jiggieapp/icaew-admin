@@ -187,9 +187,7 @@ if no error occured server send Response header status code to 200
 }
 ```
 
-```
-GET /event/{id}
-```
+### GET /event/{id}
 
 #### Response Body
 ```json
