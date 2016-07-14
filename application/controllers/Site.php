@@ -69,7 +69,8 @@ class Site extends CI_Controller {
         $crud->columns('title','description','image', 'updated_at');
 
         $crud->fields('title','description','image', 'created_at', 'updated_at');
-
+        $crud->unset_texteditor('description','full_text');
+        
         $crud->set_field_upload('image','assets/uploads/files');
         $crud->required_fields('title');
 
