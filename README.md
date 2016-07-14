@@ -68,6 +68,12 @@ if no error occured server send Response header status code to 200
 ```
 
 ### GET /contact
+
+#### Parameters 
+
+| Key           | Description   | Example Value |
+| ------------- | ------------- | ------------- |
+| country_id    | filter by country_id | 2 |
 #### Response Body
 ```json
 {
