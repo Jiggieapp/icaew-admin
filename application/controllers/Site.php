@@ -70,7 +70,7 @@ class Site extends CI_Controller {
 
         $crud->fields('title','description','image', 'created_at', 'updated_at');
         $crud->unset_texteditor('description','full_text');
-        
+
         $crud->set_field_upload('image','assets/uploads/files');
         $crud->required_fields('title');
 
@@ -177,8 +177,9 @@ class Site extends CI_Controller {
 
         $crud->set_relation('country_id','country','name');
 
-        $crud->fields('country_id','name','image', 'email', 'phone', 'address', 'created_at', 'updated_at');
+        $crud->fields('country_id','name', 'description', 'image', 'email', 'phone', 'address', 'created_at', 'updated_at');
         $crud->unset_texteditor('address', 'full_text');
+        $crud->unset_texteditor('description','full_text');
         $crud->set_field_upload('image','assets/uploads/files');
         
         $crud->required_fields('country_id','name');
