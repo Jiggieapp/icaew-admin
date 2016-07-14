@@ -100,6 +100,10 @@ class Api extends CI_Controller {
             $this->db->where('ct.id', $id);
         } else {
             $is_coll = true;
+
+            if ($this->input->get('country_id') != '') {
+                $this->db->where('country_id', $this->input->get('country_id'));
+            }
         }
 
         $contact = $this->db->get();
