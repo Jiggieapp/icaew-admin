@@ -28,6 +28,11 @@ class Api extends CI_Controller {
         if (isset($value->is_banner)) {
             $value->is_banner = (bool) $value->is_banner;
         }
+
+        if (isset($value->like_count)) {
+            $value->like_count = (int) $value->like_count;
+        }
+
         return $value;
     }
 
@@ -179,6 +184,44 @@ class Api extends CI_Controller {
         }
 
         $this->response(200, 'OK', $data);
+    }
+
+    function program_like($id)
+    {
+        $this->db->where('id', $id);
+        $program = $this->db->get('program');
+        
+        if ($program->result_id->num_rows == 0) {
+            $res = [
+                'code' => 404,
+                'message' => 'No record found',
+                'data' => null
+            ];
+        } else  {
+
+            $count_current = (int)$program->result_object()[0]->like_count;
+            
+            $this->db->set('like_count', $count_current + 1);
+            $this->db->where('id', $id);
+            $update = $this->db->update('program');
+
+            if ($update) {
+                $res = [
+                    'code' => 200,
+                    'message' => 'Liked success',
+                    'data' => ['count' => $count_current + 1]
+                ]; 
+            } else {
+                $res = [
+                    'code' => 400,
+                    'message' => 'An error occured',
+                    'data' => null
+                ];
+            }
+        }
+
+        echo json_encode($res);
+        header('Content-Type: application/json');
     }
 
     function university($id = null)

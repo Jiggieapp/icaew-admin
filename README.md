@@ -232,6 +232,7 @@ if no error occured server send Response header status code to 200
       "youtube": "https://www.youtube.com/watch?v=jJ7DWNLyrbo",
       "is_banner": false,
       "initial": "MTD",
+      "like_count": 0,
       "created_at": "2016-06-28 07:29:45",
       "updated_at": "2016-06-29 08:21:30"
     },
@@ -243,6 +244,7 @@ if no error occured server send Response header status code to 200
       "youtube": null,
       "is_banner": false,
       "initial": "PRG",
+      "like_count": 10,
       "created_at": "2016-06-29 09:23:49",
       "updated_at": "2016-06-29 09:23:49"
     }
@@ -265,11 +267,24 @@ if no error occured server send Response header status code to 200
     "youtube": "https://www.youtube.com/watch?v=jJ7DWNLyrbo",
     "is_banner": false,
     "initial": "MTD",
+    "like_count": 10,
     "created_at": "2016-06-28 07:29:45",
     "updated_at": "2016-06-29 08:21:30"
   }
 }
 ```
+
+### PUT /program_like/{id}
+
+#### Response Body
+```json
+{
+  "code": 200,
+  "message": "Liked success",
+  "data": {
+    "count": 14
+  }
+}
 
 ### GET /university
 
