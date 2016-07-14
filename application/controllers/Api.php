@@ -127,7 +127,7 @@ class Api extends CI_Controller {
     {
         $this->db->select('e.*, country.name AS country_name');
         $this->db->from('event e');
-        $this->db->join('country', 'event.country_id = country.id');
+        $this->db->join('country', 'e.country_id = country.id');
         
         $is_coll = false;
         if (!is_null($id)) {
@@ -145,9 +145,9 @@ class Api extends CI_Controller {
             $this->db->order_by('start_date', 'DESC');
         }
 
-        $event = $this->db->get('event');
+        $event = $this->db->get();
         $data = $event->result_object();
-
+        
         if (!is_null($id)) {
             $data = $data[0];
         }

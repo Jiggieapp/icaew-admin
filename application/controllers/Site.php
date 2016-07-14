@@ -90,7 +90,7 @@ class Site extends CI_Controller {
 
         $crud->set_relation('country_id','country','name');
 
-        $crud->fields('country_id','telp','email','website', 'facebook', 'image', 'created_at', 'updated_at');
+        $crud->fields('country_id','telp','email', 'address', 'website', 'facebook', 'image', 'created_at', 'updated_at');
         $crud->set_field_upload('image','assets/uploads/files');
 
         $crud->required_fields('country_id','telp','email');
@@ -130,7 +130,9 @@ class Site extends CI_Controller {
         $crud->set_relation('country_id','country','name');
         
         $crud->fields('country_id','title', 'description', 'summary', 'image', 'start_date', 'end_date','created_at', 'updated_at');
-        
+        $crud->unset_texteditor('description','full_text');
+        $crud->unset_texteditor('summary','full_text');
+
         $crud->required_fields('country_id','title', 'start_date', 'end_date');
 
         $crud->display_as('country_id','Country');
@@ -151,6 +153,7 @@ class Site extends CI_Controller {
         
         $crud->fields('title', 'initial', 'description', 'image', 'youtube', 'is_banner', 'created_at', 'updated_at');
         
+        $crud->unset_texteditor('description','full_text');
         $crud->required_fields('title', 'initial', 'description');
 
         $crud->set_field_upload('image','assets/uploads/files');
