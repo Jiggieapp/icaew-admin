@@ -66,9 +66,9 @@ class Site extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->set_table('about');
         $crud->set_subject('About');
-        $crud->columns('title','description','image', 'updated_at');
+        $crud->columns('title','description','image', 'youtube','updated_at');
 
-        $crud->fields('title','description','image', 'created_at', 'updated_at');
+        $crud->fields('title','description','image', 'youtube', 'created_at', 'updated_at');
         $crud->unset_texteditor('description','full_text');
 
         $crud->set_field_upload('image','assets/uploads/files');
@@ -155,7 +155,7 @@ class Site extends CI_Controller {
         
         $crud->fields('title', 'initial', 'description', 'image', 'youtube', 'is_banner', 'created_at', 'updated_at');
         
-        $crud->unset_texteditor('description','full_text');
+        //$crud->unset_texteditor('description','full_text');
         $crud->required_fields('title', 'initial', 'description');
 
         $crud->set_field_upload('image','assets/uploads/files');
