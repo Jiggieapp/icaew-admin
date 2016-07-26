@@ -83,6 +83,7 @@ if no error occured server send Response header status code to 200
     {
       "id": 1,
       "country_id": 1,
+      "name": "ICAEW Vietnam - Hanoi",
       "telp": "021556",
       "email": "agusfantasy@gmail.com",
       "website": null,
@@ -106,6 +107,7 @@ if no error occured server send Response header status code to 200
   "data": {
     "id": 1,
     "country_id": 1,
+    "name": "ICAEW Vietnam - Hanoi",
     "telp": "021556",
     "email": "agusfantasy@gmail.com",
     "website": null,
@@ -274,7 +276,7 @@ if no error occured server send Response header status code to 200
 }
 ```
 
-### PUT /program_like/{id}
+### GET /program_like/{id}
 
 #### Response Body
 ```json

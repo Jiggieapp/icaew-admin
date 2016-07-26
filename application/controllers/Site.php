@@ -86,12 +86,12 @@ class Site extends CI_Controller {
         $crud = new grocery_CRUD();
         $crud->set_table('contact');
         $crud->set_subject('Contact');
-        $crud->columns('country_id','telp','email','website','facebook','image','updated_at');
+        $crud->columns('country_id', 'name', 'telp','email','website','facebook','image','updated_at');
         $crud->display_as('country_id','Country');
 
         $crud->set_relation('country_id','country','name');
 
-        $crud->fields('country_id','telp','email', 'address', 'website', 'facebook', 'image', 'created_at', 'updated_at');
+        $crud->fields('country_id','name', 'telp','email', 'address', 'website', 'facebook', 'image', 'created_at', 'updated_at');
         $crud->unset_texteditor('address', 'full_text');
         $crud->set_field_upload('image','assets/uploads/files');
 

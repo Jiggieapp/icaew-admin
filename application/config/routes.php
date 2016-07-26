@@ -67,7 +67,7 @@ $route['api/event/(:num)'] = 'api/event/$1';
 
 $route['api/program'] = 'api/program';
 $route['api/program/(:num)'] = 'api/program/$1';
-$route['api/program_like/(:num)']['put'] = 'api/program_like/$1';
+$route['api/program_like/(:num)'] = 'api/program_like/$1';
 
 $route['api/university'] = 'api/university';
 $route['api/university/(:num)'] = 'api/university/$1';
