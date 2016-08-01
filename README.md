@@ -61,6 +61,7 @@ if no error occured server send Response header status code to 200
     "title": "Tentang Kita",
     "description": "<p>\r\n\tAda cerita tentang kita</p>\r\n",
     "image": "http://icaew.app/uploads/files/133a6-1403829032.jpg",
+    "youtube": "https://www.youtube.com/watch?v=jJ7DWNLyrbo",
     "created_at": null,
     "updated_at": "2016-06-28 07:00:38"
   }
